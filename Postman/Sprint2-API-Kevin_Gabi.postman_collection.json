@@ -1,0 +1,42 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Sprint2-API-Kevin_Gabi",
+		"_postman_id": "efdc3f3c-7765-55f2-d675-a0cc343aaa3a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Instituicao.Listar",
+			"request": {
+				"url": "http://localhost:5000/api/instituicao",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Instituicao.Cadastrar",
+			"request": {
+				"url": "http://localhost:5000/api/instituicao",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Nome_Fantasia\" : \"Robin\",\n\t\"Razao_Social\" : \"Svigufo sa\",\n\t\"CNPJ\" : \"1321354012\",\n\t\"Logradouro\" : \"Rua Bonita\",\n\t\"CEP\" : \"03174005\",\n\t\"UF\" : \"SP\",\n\t\"Cidade\" : \"Sao Paulo\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
