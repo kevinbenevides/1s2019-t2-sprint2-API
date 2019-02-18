@@ -10,8 +10,12 @@ namespace Senai.SviGufo.WebApi.Interfaces
     {
         List<InstituicaoDomain> Listar();
 
+        InstituicaoDomain BuscarId(int id);
+
         void Cadastrar(InstituicaoDomain Instituicao);
 
-        InstituicaoDomain BuscarId(int id);
+        void Atualizar(InstituicaoDomain Instituicao, int id);
+
+        void Delete(int id);
     }
 }

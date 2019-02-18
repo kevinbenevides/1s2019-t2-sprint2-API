@@ -31,7 +31,10 @@ namespace Senai.SviGufo.WebApi.Controllers
         public IActionResult GetById(int id)
         {
             InstituicaoDomain instituicao = InstituicaoRepository.BuscarId(id);
-
+            if (instituicao == null)
+            {
+                return NotFound();
+            }
             return Ok(instituicao);
 
         }
@@ -39,9 +42,42 @@ namespace Senai.SviGufo.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(InstituicaoDomain InstituicaoCadastrada)
         {
-            InstituicaoRepository.Cadastrar(InstituicaoCadastrada);
-            return Ok();
+            try
+            {
+                InstituicaoRepository.Cadastrar(InstituicaoCadastrada);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest("Assim como sua vida, não de");
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(InstituicaoDomain InstuicaoCadastrada, int id)
+        {
+            InstituicaoDomain InstituicaoBuscada = InstituicaoRepository.BuscarId(id);
+            
+            if(InstituicaoBuscada == null)
+            {
+                return NotFound();
+            }
+            try
+            {
+                InstituicaoRepository.Atualizar(InstuicaoCadastrada, id);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
         
+        [HttpDelete("{id}")]
+        public IActionResult Delete(InstituicaoDomain InstuicaoCadastrada, int id)
+        {
+            InstituicaoRepository.Delete(id);
+            return Ok();
+        }
     }
 }
