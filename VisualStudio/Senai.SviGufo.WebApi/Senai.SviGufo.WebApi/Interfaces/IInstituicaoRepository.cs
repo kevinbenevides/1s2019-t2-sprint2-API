@@ -1,21 +1,43 @@
 ﻿using Senai.SviGufo.WebApi.Domains;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai.SviGufo.WebApi.Interfaces
 {
-    interface IInstituicaoRepository
+    /// <summary>
+    /// Interface responsável pelo repositório da Instituição
+    /// </summary>
+    public interface IInstituicaoRepository
     {
+        /// <summary>
+        /// Listar as instituições
+        /// </summary>
+        /// <returns></returns>
         List<InstituicaoDomain> Listar();
 
-        InstituicaoDomain BuscarId(int id);
+        /// <summary>
+        /// Busca uma instituição pelo Id
+        /// </summary>
+        /// <param name="id">Id da instituição</param>
+        /// <returns>Retorna uma instituição</returns>
+        InstituicaoDomain BuscarPorId(int id);
 
-        void Cadastrar(InstituicaoDomain Instituicao);
+        /// <summary>
+        /// Cadastra uma nova instituição
+        /// </summary>
+        /// <param name="instituicao">Recebe uma instituição</param>
+        void Cadastrar(InstituicaoDomain instituicao);
 
-        void Atualizar(InstituicaoDomain Instituicao, int id);
+        /// <summary>
+        /// Altera uma instituição
+        /// </summary>
+        /// <param name="instituicao">Instituição</param>
+        /// <param name="id">Id da instituição</param>
+        void Alterar(InstituicaoDomain instituicao, int id);
 
-        void Delete(int id);
+        /// <summary>
+        /// Deleta uma instituição
+        /// </summary>
+        /// <param name="id">Id da instituição</param>
+        void Deletar(int id);
     }
 }

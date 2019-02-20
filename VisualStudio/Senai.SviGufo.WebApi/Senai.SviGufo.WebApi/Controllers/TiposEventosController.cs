@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Senai.SviGufo.WebApi.Domains;
 using Senai.SviGufo.WebApi.Interfaces;
-using Senai.SviGufo.WebApi.Repositorios;
+using Senai.SviGufo.WebApi.Repositories;
 using System.Collections.Generic;
 
 namespace Senai.SviGufo.WebApi.Controllers
 {
     [Produces("application/json")]
-    [Route("api/[controller]")] //Define a rota
-    [ApiController] //Implementa funcionalidades em nosso controller
-    public class TiposEventosController : ControllerBase //Base do controller não possui suporte a view
+    [Route("api/[controller]")]
+    [ApiController] // Implementa funcionalidades em nosso controller
+    public class TiposEventosController : ControllerBase
     {
-        List<TipoEventoDomain> tiposeventos = new List<TipoEventoDomain>()
+        List<TipoEventoDomain> tiposEventos = new List<TipoEventoDomain>()
         {
             new TipoEventoDomain{ Id = 1, Nome = "Tecnologia"},
             new TipoEventoDomain{ Id = 2, Nome = "Redes"},
@@ -19,7 +19,7 @@ namespace Senai.SviGufo.WebApi.Controllers
             new TipoEventoDomain{ Id = 4, Nome = "Design"}
         };
 
-        //Cria um objeto do tipo ITipoEventorepository
+        //Cria um objeto do tipo ITipoEventoRepository
         private ITipoEventoRepository TipoEventoRepository { get; set; }
 
         public TiposEventosController()
@@ -35,33 +35,31 @@ namespace Senai.SviGufo.WebApi.Controllers
         //}
 
         /// <summary>
-        /// Retorna uma lista de eventos
+        /// Retorna uma lista de tipos de eventos
         /// </summary>
-        /// <returns>Lista Eventos</returns>
-
+        /// <returns>Lista de Eventos</returns>
+        
         [HttpGet]
         public IEnumerable<TipoEventoDomain> Get()
         {
             return TipoEventoRepository.Listar();
         }
 
-
         /// <summary>
-        /// Busca o evento pelo Id
+        /// Busca o tipo de evento pelo Id
         /// </summary>
         /// <param name="id">Id do tipo de evento</param>
-        /// <returns>Retorna um Tipo de evento</returns>
-
+        /// <returns>Retorn um Tipo de evento</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             //Busca um tipo de evento pelo seu id
-            TipoEventoDomain tipoEvento = tiposeventos.Find(x => x.Id == id);
+            TipoEventoDomain tipoEvento = tiposEventos.Find(x => x.Id == id);
 
             //Verifica se foi encontrado na lista o tipo de evento
-            if (tipoEvento == null)
+            if(tipoEvento == null)
             {
-                //retorna não encontrado 
+                //retorna não encontrado
                 return NotFound();
             }
 
@@ -69,34 +67,42 @@ namespace Senai.SviGufo.WebApi.Controllers
             return Ok(tipoEvento);
         }
 
-        [HttpPost] //Verbo para inserir
+        [HttpPost] //Verbo para inserir 
         //[FromBody] Pega os dados enviados para a api
         public IActionResult Post(TipoEventoDomain tipoEventoRecebido)
         {
             //Adiciona o tipo de evento recebido na Api
+            //tiposEventos.Add(new TipoEventoDomain
+            //{
+            //    Id = tiposEventos.Count + 1,                                     
+            //    Nome = tipoEventoRecebido.Nome
+            //});
+
             TipoEventoRepository.Cadastrar(tipoEventoRecebido);
 
             //Retorna Ok e a lista com os tipos de eventos
             return Ok();
         }
 
-        /*[HttpPut("{id}")] //Verbo para Atualizar
-        public IActionResult Put(int id, TipoEventoDomain tipoEventoRecebido )
-        {
-            return Ok();
-        }*/
-
         [HttpPut] //Verbo para Atualizar
         public IActionResult Put(TipoEventoDomain tipoEventoRecebido)
         {
             TipoEventoRepository.Alterar(tipoEventoRecebido);
+
             return Ok();
         }
 
-        [HttpDelete ("{id}")]//Verbo para deletar um registro
+        //[HttpPut("{id}")] //verbo para alterar, passa o id no recurso
+        //public IActionResult Put(int id, TipoEventoDomain tipoEventoRecebido)
+        //{
+        //    return Ok();
+        //}
+
+
+        [HttpDelete("{id}")]//Verbo para deletar um registro
         public IActionResult Delete(int id)
         {
-           TipoEventoRepository.Deletar(id);
+            TipoEventoRepository.Deletar(id);
 
             return Ok();
         }

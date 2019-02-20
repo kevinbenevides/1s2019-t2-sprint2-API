@@ -1,25 +1,33 @@
 ﻿using Senai.SviGufo.WebApi.Domains;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai.SviGufo.WebApi.Interfaces
 {
-    interface ITipoEventoRepository
+    public interface ITipoEventoRepository
     {
         /// <summary>
         /// Lista todos os tipos de eventos
         /// </summary>
-        /// <returns>Retorna uma lista de tipo de evento</returns>
-
+        /// <returns>Retorna uma lista de tipo de eventos</returns>
         List<TipoEventoDomain> Listar();
 
+        /// <summary>
+        /// Cadastrar um novo evento
+        /// </summary>
+        /// <param name="tipoEvento">Objeto TipoEvento</param>
         void Cadastrar(TipoEventoDomain tipoEvento);
 
-
+        /// <summary>
+        /// Altera um tipo de evento
+        /// </summary>
+        /// <param name="tipoEvento">TipoEventoDomain</param>
         void Alterar(TipoEventoDomain tipoEvento);
 
+        /// <summary>
+        /// Deleta um tipo de evento
+        /// </summary>
+        /// <param name="id">id do tipo evento</param>
         void Deletar(int id);
+        
     }
 }
