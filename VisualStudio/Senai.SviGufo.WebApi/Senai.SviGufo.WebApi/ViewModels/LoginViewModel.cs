@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Senai.SviGufo.WebApi.ViewModels
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage =  "Email Incorreto")]
+        [Required(ErrorMessage = "Informe o email")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage =  "Senha Incorreta")]
+        [Required(ErrorMessage = "Informe a senha")]
         public string Senha { get; set; }
     }
 }

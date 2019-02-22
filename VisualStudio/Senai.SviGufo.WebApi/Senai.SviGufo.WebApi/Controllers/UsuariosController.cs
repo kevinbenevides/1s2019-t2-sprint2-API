@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Senai.SviGufo.WebApi.Domains;
 using Senai.SviGufo.WebApi.Interfaces;
 using Senai.SviGufo.WebApi.Repositories;
@@ -13,10 +8,9 @@ namespace Senai.SviGufo.WebApi.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-
     public class UsuariosController : ControllerBase
     {
-        private IUsuarioRepository UsuarioRepository { get; set; }
+        public IUsuarioRepository UsuarioRepository { get; set; }
 
         public UsuariosController()
         {
@@ -33,16 +27,18 @@ namespace Senai.SviGufo.WebApi.Controllers
         {
             try
             {
+                //Chama o repositorio para efetuar o cadastro do usuário
                 UsuarioRepository.Cadastrar(usuario);
-                return Ok(new{
+
+                //Retorna um status code 200 informando que o usuário foi cadastrado
+                return Ok(new {
                     mensagem = "Usuário Cadastrado"
                 });
-
-            }catch
+            }
+            catch
             {
                 return BadRequest();
             }
         }
-
     }
 }

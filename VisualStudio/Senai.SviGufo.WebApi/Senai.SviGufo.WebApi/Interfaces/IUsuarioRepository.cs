@@ -1,22 +1,24 @@
 ﻿using Senai.SviGufo.WebApi.Domains;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai.SviGufo.WebApi.Interfaces
 {
     /// <summary>
-    /// Insterface responsavel pelo repositorio Usuario
+    /// Interface responsável pelo repositório Usuario
     /// </summary>
     public interface IUsuarioRepository
     {
         /// <summary>
         /// Cadastra um novo usuário
         /// </summary>
-        /// <param name="usuario"></param>
+        /// <param name="usuario">UsuarioDomain</param>
         void Cadastrar(UsuarioDomain usuario);
 
+        /// <summary>
+        /// Valida o usuário
+        /// </summary>
+        /// <param name="email">email do usuário</param>
+        /// <param name="senha">senha do usuário</param>
+        /// <returns>Retorna um usuário</returns>
         UsuarioDomain BuscarPorEmailSenha(string email, string senha);
     }
 }

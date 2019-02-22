@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 
@@ -15,9 +16,13 @@ namespace Senai.SviGufo.WebApi
         // ConfigureServices é onde eu adiciono os serviços
         public void ConfigureServices(IServiceCollection services)
         {
-            
             //Adiciona o Mvc ao projeto
-            services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+            //Adiciona as opções do json 
+            .AddJsonOptions(options => {
+                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            })
+            .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
             //Adiciona o Cors ao projeto
             //Veremos em breve
@@ -37,33 +42,31 @@ namespace Senai.SviGufo.WebApi
                 c.SwaggerDoc("v1", new Info { Title = "SviGufo API", Version = "v1" });
             });
 
+            //Implementa autenticação
             services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = "JwtBearer";
-                options.DefaultChallengeScheme = "JwtBearer";
-
-            }
+                {
+                    options.DefaultAuthenticateScheme = "JwtBearer";
+                    options.DefaultChallengeScheme = "JwtBearer";
+                }
             ).AddJwtBearer("JwtBearer", options =>
             {
-                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                //Define as opções 
+                options.TokenValidationParameters = new TokenValidationParameters
                 {
                     //Quem esta solicitando
                     ValidateIssuer = true,
-
-                    //Quem esta validando
+                    //Quem esta validadando
                     ValidateAudience = true,
-
                     //Definindo o tempo de expiração
                     ValidateLifetime = true,
-
                     //Forma de criptografia
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("svigufo-chave-autentication")),
-
-                    //Tempo de expriação do token
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("svigufo-chave-autenticacao")),
+                    //Tempo de expiração do Token
                     ClockSkew = TimeSpan.FromMinutes(30),
+                    //Nome da Issuer, de onde esta vindo
                     ValidIssuer = "SviGufo.WebApi",
+                    //Nome da Audience, de onde esta vindo
                     ValidAudience = "SviGufo.WebApi"
-
                 };
             });
         }
@@ -86,13 +89,14 @@ namespace Senai.SviGufo.WebApi
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "SviGufo");
             });
 
+            //Habilita a autenticação
+            app.UseAuthentication();
+
             //Habilita o Cors
             app.UseCors("CorsPolicy");
 
             //Habilita o MVC
             app.UseMvc();
-
-
             
         }
     }

@@ -30,6 +30,7 @@ namespace Senai.SviGufo.WebApi.Controllers
         /// </summary>
         /// <returns>Retorna uma List de Instituições</returns>
         [HttpGet]
+        
         public IActionResult Get()
         {
             //Retorna a lista de Instituições com o Status Code Ok
