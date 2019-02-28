@@ -11,6 +11,11 @@ namespace Senai.SviGufo.WebApi.Repositories
     {
         private string StringConexao = "Data Source=.\\SqlExpress; initial catalog=SENAI_SVIGUFO_MANHA_BACKEND; integrated security=true";
 
+        public void Aprovar(int id_convite, ConviteDomain convite)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Cadastrar(ConviteDomain convite)
         {
             string QueryInsert = @"INSERT INTO CONVITES(ID_EVENTO,ID_USUARIO,SITUACAO) VALUES (@ID_EVENTO, @ID_USUARIO, @SITUACAO)";

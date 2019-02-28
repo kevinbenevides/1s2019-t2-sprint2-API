@@ -1,0 +1,14 @@
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\bin\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.deps.json
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\bin\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.runtimeconfig.json
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\bin\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.runtimeconfig.dev.json
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\bin\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.dll
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.csprojAssemblyReference.cache
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.csproj.CoreCompileInputs.cache
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.RazorAssemblyInfo.cache
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.RazorAssemblyInfo.cs
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.AssemblyInfoInputs.cache
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.AssemblyInfo.cs
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.RazorTargetAssemblyInfo.cache
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\bin\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.pdb
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.dll
+C:\Users\39235256801\source\repos\Senai.InLock.CodeFirst.WebApi.Manha\Senai.InLock.CodeFirst.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.InLock.CodeFirst.WebApi.Manha.pdb

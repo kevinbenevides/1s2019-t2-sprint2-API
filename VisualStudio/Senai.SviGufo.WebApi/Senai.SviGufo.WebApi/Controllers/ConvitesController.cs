@@ -78,7 +78,7 @@ namespace Senai.SviGufo.WebApi.Controllers
                 }
                 else
                 {
-                    convite.Situacao =s EnSituacaoConvite.AGUARDANDO;
+                    convite.Situacao = EnSituacaoConvite.AGUARDANDO;
                 }
 
                 ConviteRepository.Cadastrar(convite);
