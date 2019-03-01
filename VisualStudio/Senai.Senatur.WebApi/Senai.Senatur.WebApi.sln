@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senai.Senatur.WebApi", "Senai.Senatur.WebApi\Senai.Senatur.WebApi.csproj", "{BDE29F85-4FC9-4664-BCA2-D364F4D9735D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDE29F85-4FC9-4664-BCA2-D364F4D9735D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE29F85-4FC9-4664-BCA2-D364F4D9735D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE29F85-4FC9-4664-BCA2-D364F4D9735D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE29F85-4FC9-4664-BCA2-D364F4D9735D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98BB766D-2913-4035-BB76-B897A48D4783}
+	EndGlobalSection
+EndGlobal
